@@ -4,17 +4,43 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+import java.util.*;
 public class EmployeeClient
 {
     public static void main(String[] args)
     {
-        Employee aayush = new Employee("Aayush Chanda", 50000);
+        Scanner Keyboard = new Scanner(System.in);
         
-        aayush.getName();
+        System.out.println("Enter Employee name: ");
+        String employeeName = Keyboard.nextLine();
+        System.out.println("Enter Employee starting salary: ");
+        double currentSalary = Keyboard.nextDouble();
+        System.out.println("Enter raise factor (in percent): ");
+        double byPercent = Keyboard.nextDouble();
+        
+        Employee emp = new Employee(employeeName, currentSalary);
+        
+        emp.getName();
         System.out.println("Before Raise");
-        aayush.getSalary();
+        emp.getSalary();
         System.out.println("After Raise");
-        aayush.raiseSalary(0.50);
-        aayush.getSalary();
+        emp.raiseSalary(byPercent);
+        emp.getSalary();
     }
 }
+
+/*
+ * Sample Output
+ * 
+ * Enter Employee name: 
+Aayush Chanda
+Enter Employee starting salary: 
+100000
+Enter raise factor (in percent): 
+50
+Name: Aayush Chanda
+Before Raise
+Salary: $100,000.00
+After Raise
+Salary: $150,000.00
+ */

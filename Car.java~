@@ -24,9 +24,14 @@ public class Car
         return this.gas;
     }
     
+    public double getEfficiency()
+    {
+        return this.mpg;
+    }
+    
     public void drive(double mile)
     {
         consume = mile / this.speed;
-        gas = (double)this.gas - consume;
+        gas = this.gas - consume;
     }
 }

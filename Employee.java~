@@ -19,6 +19,9 @@ public class Employee
     public void raiseSalary(double byPercent)
     {
         double raise = this.salary * byPercent;
+        System.out.println("Raise Factor: " + byPercent);
+        System.out.println("Starting Salary: " + this.salary);
+        System.out.println("Raise: " + raise);
         this.salary += raise;
     }
     
@@ -30,8 +33,8 @@ public class Employee
     
     public double getSalary()
     {
-        CurrencyFormat fmt = new CurrencyFormat();
-        System.out.println("Salary: " + salary);
+        NumberFormat fmt = NumberFormat.getCurrencyInstance();
+        System.out.println("Salary: " + fmt.format(salary));
         return salary;
     }
 }
